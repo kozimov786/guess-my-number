@@ -37,13 +37,13 @@ check.addEventListener('click', () => {
   }
   //if you lose
   else if (guess !== secretNum) {
-    if (guess > 1) {
+    if (score > 1) {
       dispMessage(guess > secretNum ? "Too High" : "Too Low");
       score--;
       scoreFunc(score);
-    } else {
+    } else if (score <= 1) {
       dispMessage('💥 You lost the game!');
-      scoreFunc(0);
+      scoreFunc(0)
     }
   }
 
